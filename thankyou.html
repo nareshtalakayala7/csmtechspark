@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | TECHSPARK 2025</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, rgba(5,10,40,0.9), rgba(0,0,0,0.9)),
+        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ================= CONTENT ================= */
+    .thankyou-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .thankyou-card {
+      background: rgba(0,0,0,0.75);
+      padding: 45px 35px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    }
+
+    .thankyou-card i {
+      font-size: 60px;
+      color: #00e5ff;
+      margin-bottom: 20px;
+      animation: pop 1s ease;
+    }
+
+    .thankyou-card h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 34px;
+      color: #00e5ff;
+      margin-bottom: 10px;
+    }
+
+    .thankyou-card p {
+      font-size: 16px;
+      color: #ddd;
+      margin-bottom: 25px;
+    }
+
+    .thankyou-card a {
+      display: inline-block;
+      padding: 12px 26px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #00e5ff, #1de9b6);
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .thankyou-card a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: rgba(0,0,0,0.75);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 22px;
+      margin: 0 12px;
+      transition: transform 0.3s, color 0.3s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #00e5ff;
+      transform: scale(1.2);
+    }
+
+    /* ================= ANIMATIONS ================= */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- THANK YOU CONTENT -->
+<div class="thankyou-wrapper">
+  <div class="thankyou-card">
+    <i class="fas fa-check-circle"></i>
+    <h1>Thank You!</h1>
+    <p>Your registration for <strong>SRK TECHSPARK 2025</strong> was successful.<br>
+       We look forward to seeing you at the event!</p>
+
+    <a href="index.html">Back to Home</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Follow SRK Institute of Technology</p>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/srk_college_official_updates?igsh=NG9razQzcGRrbHNs" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://youtube.com/@srkinstituteoftechnology?si=QUk0DzMpBiW46Dic" target="_blank">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.linkedin.com/school/srk-institute-of-technology-enikepadu-vijayawada-521108-cc-x4-" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -17,7 +17,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, rgba(10,15,60,0.9), rgba(0,0,0,0.9)),
-                  url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -26,9 +26,9 @@
       flex-direction: column;
     }
 
-    /* Navbar */
+    /* NAVBAR */
     .navbar {
-      background: rgba(0,0,0,0.75);
+      background: rgba(0,0,0,0.8);
       padding: 15px 40px;
       display: flex;
       justify-content: space-between;
@@ -38,28 +38,47 @@
       z-index: 1000;
     }
 
-    .navbar h1 {
+    .nav-logo {
       font-family: 'Orbitron', sans-serif;
       font-size: 22px;
       color: #00e5ff;
       letter-spacing: 2px;
+      font-weight: 700;
     }
 
-    .navbar a {
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links li a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
-      margin-left: 20px;
-      transition: color 0.3s;
+      padding: 8px 16px;
+      border-radius: 25px;
+      transition: 0.3s;
     }
 
-    .navbar a:hover { color: #00e5ff; }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background: #00e5ff;
+      color: #000;
+    }
 
-    /* Page Title */
+    /* MENU BUTTON */
+    .menu-btn {
+      font-size: 28px;
+      color: #00e5ff;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* PAGE TITLE */
     .page-title {
       text-align: center;
       padding: 50px 20px 30px;
-      animation: fadeIn 1.5s ease;
     }
 
     .page-title h2 {
@@ -75,7 +94,7 @@
       color: #ddd;
     }
 
-    /* Events Grid */
+    /* EVENTS GRID */
     .events-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -90,8 +109,7 @@
       padding: 25px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.5);
       backdrop-filter: blur(10px);
-      transition: transform 0.4s, box-shadow 0.4s;
-      animation: slideUp 1.5s ease;
+      transition: 0.4s;
     }
 
     .event-card:hover {
@@ -120,28 +138,26 @@
       color: #000;
       font-weight: 700;
       text-decoration: none;
-      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .register-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(0,229,255,0.7);
-    }
-
-    /* Footer */
+    /* FOOTER */
     footer {
-      background: rgba(0,0,0,0.85);
-      padding: 20px;
+      background: rgba(0,0,0,0.9);
+      padding: 25px 0;
       text-align: center;
     }
 
-    footer p { margin-bottom: 10px; color: #ccc; }
+    footer p {
+      margin-bottom: 12px;
+      color: #ccc;
+      font-size: 14px;
+    }
 
     .social-icons a {
       color: #fff;
       font-size: 22px;
-      margin: 0 12px;
-      transition: transform 0.3s, color 0.3s;
+      margin: 0 14px;
+      transition: 0.3s;
     }
 
     .social-icons a:hover {
@@ -149,78 +165,102 @@
       transform: scale(1.2);
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    /* MOBILE MENU */
+    @media (max-width: 900px) {
+      .menu-btn { display: block; }
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        border-radius: 15px;
+        display: none;
+      }
 
-    @media (max-width: 768px) {
-      .events-container { padding: 20px; }
-      .page-title h2 { font-size: 36px; }
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .events-container {
+        padding: 20px;
+      }
+
+      .page-title h2 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-logo">TECHSPARK 2025</div>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="guidelines.html">Guidelines</a></li>
-    <li><a href="rules.html">Rules</a></li>
-    <li><a href="schedule.html">Schedule</a></li>
-    <li><a href="coordinators.html">Coordinators</a></li>
-</nav>
+  <nav class="navbar">
+    <div class="nav-logo">TECHSPARK 2025</div>
 
-  <!-- Page Title -->
+    <div class="menu-btn" id="menuBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html" class="active">Events</a></li>
+      <li><a href="guidelines.html">Guidelines</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="coordinators.html">Coordinators</a></li>
+    </ul>
+  </nav>
+
+  <!-- TITLE -->
   <div class="page-title">
     <h2>Technical Events</h2>
     <p>Explore, Compete & Innovate at SRK TECHSPARK 2025</p>
   </div>
 
-  <!-- Events Section -->
+  <!-- EVENTS -->
   <div class="events-container">
-
     <div class="event-card">
       <h3>Poster Presentation</h3>
-      <p>Visually communicate technical concepts and innovations through creative posters. Impress judges with design, clarity, and technical depth.</p>
+      <p>Showcase technical ideas creatively.</p>
       <a href="register.html" class="register-btn">Register</a>
     </div>
 
     <div class="event-card">
       <h3>Technical Quiz</h3>
-      <p>Test your technical knowledge across computer science, programming, and emerging technologies in a fast-paced quiz challenge.</p>
+      <p>Test your technical knowledge.</p>
       <a href="register.html" class="register-btn">Register</a>
     </div>
 
     <div class="event-card">
       <h3>Snap2Prompt</h3>
-      <p>Convert images into creative AI prompts and story starters. Challenge your imagination and prompt-engineering skills.</p>
+      <p>Convert images into creative AI prompts.</p>
       <a href="register.html" class="register-btn">Register</a>
     </div>
 
     <div class="event-card">
       <h3>Reverse Coding</h3>
-      <p>Analyze program outputs and reconstruct the original logic. A perfect challenge for logical thinking and coding expertise.</p>
+      <p>Reconstruct logic from output.</p>
       <a href="register.html" class="register-btn">Register</a>
     </div>
 
     <div class="event-card">
       <h3>Start-Up Pitch</h3>
-      <p>Pitch your startup ideas, business models, and product innovations. Convince the panel with feasibility and creativity.</p>
+      <p>Pitch innovative startup ideas.</p>
       <a href="register.html" class="register-btn">Register</a>
     </div>
-
   </div>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>Follow SRK Institute of Technology</p>
     <div class="social-icons">
@@ -229,6 +269,15 @@
       <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
   </footer>
+
+  <!-- JS -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
 
 </body>
 </html>

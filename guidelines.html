@@ -22,7 +22,7 @@
     body {
       min-height: 100vh;
       background: linear-gradient(135deg, rgba(8,12,50,0.9), rgba(0,0,0,0.9)),
-                  url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');
+        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -32,7 +32,7 @@
 
     /* ================= NAVBAR ================= */
     .navbar {
-      background: rgba(0,0,0,0.75);
+      background: rgba(0,0,0,0.8);
       padding: 15px 40px;
       display: flex;
       justify-content: space-between;
@@ -42,22 +42,41 @@
       z-index: 1000;
     }
 
-    .navbar h1 {
+    .nav-logo {
       font-family: 'Orbitron', sans-serif;
       font-size: 22px;
       color: #00e5ff;
       letter-spacing: 2px;
+      font-weight: 700;
     }
 
-    .navbar a {
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links li a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
-      margin-left: 20px;
+      padding: 8px 16px;
+      border-radius: 25px;
+      transition: 0.3s;
     }
 
-    .navbar a:hover {
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background: #00e5ff;
+      color: #000;
+    }
+
+    /* MENU BUTTON */
+    .menu-btn {
+      font-size: 28px;
       color: #00e5ff;
+      cursor: pointer;
+      display: none;
     }
 
     /* ================= PAGE HEADER ================= */
@@ -70,6 +89,7 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 44px;
       color: #00e5ff;
+      text-shadow: 0 0 20px rgba(0,229,255,0.6);
     }
 
     .page-header p {
@@ -83,6 +103,7 @@
       max-width: 900px;
       margin: auto;
       padding: 30px 25px 60px;
+      flex: 1;
     }
 
     .guide-card {
@@ -113,18 +134,57 @@
 
     /* ================= FOOTER ================= */
     footer {
-      background: rgba(0,0,0,0.85);
-      padding: 20px;
+      background: rgba(0,0,0,0.9);
+      padding: 20px 0;
       text-align: center;
-      margin-top: auto;
     }
 
     footer p {
       color: #ccc;
       font-size: 14px;
+      margin-bottom: 10px;
     }
 
-    @media (max-width: 768px) {
+    .social-icons a {
+      color: #fff;
+      font-size: 22px;
+      margin: 0 14px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #00e5ff;
+      transform: scale(1.2);
+    }
+
+    /* ================= MOBILE MENU ================= */
+    @media (max-width: 900px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        border-radius: 15px;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+      }
+
       .page-header h2 {
         font-size: 32px;
       }
@@ -136,14 +196,21 @@
 
   <!-- NAVBAR -->
   <nav class="navbar">
-  <div class="nav-logo">TECHSPARK 2025</div>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="guidelines.html">Guidelines</a></li>
-    <li><a href="rules.html">Rules</a></li>
-    <li><a href="schedule.html">Schedule</a></li>
-    <li><a href="coordinators.html">Coordinators</a></li>
-</nav>
+    <div class="nav-logo">TECHSPARK 2025</div>
+
+    <div class="menu-btn" id="menuBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="guidelines.html" class="active">Guidelines</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="coordinators.html">Coordinators</a></li>
+    </ul>
+  </nav>
 
   <!-- PAGE HEADER -->
   <div class="page-header">
@@ -153,7 +220,6 @@
 
   <!-- GUIDELINES CONTENT -->
   <div class="guidelines">
-
     <div class="guide-card">
       <h3>Registration</h3>
       <ul>
@@ -180,18 +246,27 @@
         <li>Maintain discipline inside the campus.</li>
       </ul>
     </div>
-
   </div>
 
-   <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>Follow SRK Institute of Technology</p>
     <div class="social-icons">
       <a href="https://www.instagram.com/srk_college_official_updates?igsh=NG9razQzcGRrbHNs" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href=https://youtube.com/@srkinstituteoftechnology?si=QUk0DzMpBiW46Dic><i class="fab fa-youtube"></i></a>
+      <a href="https://youtube.com/@srkinstituteoftechnology?si=QUk0DzMpBiW46Dic" target="_blank"><i class="fab fa-youtube"></i></a>
       <a href="https://www.linkedin.com/school/srk-institute-of-technology-enikepadu-vijayawada-521108-cc-x4-/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
   </footer>
+
+  <!-- JS -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
 
 </body>
 </html>

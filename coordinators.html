@@ -17,7 +17,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, rgba(5,10,45,0.9), rgba(0,0,0,0.9)),
-                  url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');
+        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
       color: #ffffff;
@@ -26,9 +26,9 @@
       flex-direction: column;
     }
 
-    /* Navbar */
+    /* ================= NAVBAR ================= */
     .navbar {
-      background: rgba(0,0,0,0.75);
+      background: rgba(0,0,0,0.8);
       padding: 15px 40px;
       display: flex;
       justify-content: space-between;
@@ -38,24 +38,48 @@
       z-index: 1000;
     }
 
-    .navbar h1 {
+    .nav-logo {
       font-family: 'Orbitron', sans-serif;
       font-size: 22px;
       color: #00e5ff;
       letter-spacing: 2px;
     }
 
-    .navbar a {
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+    }
+
+    .nav-links li a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 600;
-      margin-left: 20px;
-      transition: color 0.3s;
+      padding: 8px 18px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
     }
 
-    .navbar a:hover { color: #00e5ff; }
+    .nav-links li a:hover {
+      background: rgba(0,229,255,0.15);
+      color: #00e5ff;
+    }
 
-    /* Page Header */
+    .nav-links li a.active {
+      background: linear-gradient(135deg, #00e5ff, #00bcd4);
+      color: #000;
+      box-shadow: 0 0 15px rgba(0,229,255,0.7);
+    }
+
+    /* MENU BUTTON */
+    .menu-btn {
+      display: none;
+      font-size: 26px;
+      color: #00e5ff;
+      cursor: pointer;
+    }
+
+    /* ================= PAGE HEADER ================= */
     .page-header {
       text-align: center;
       padding: 50px 20px 30px;
@@ -75,7 +99,7 @@
       color: #dddddd;
     }
 
-    /* Coordinators Section */
+    /* ================= COORDINATORS ================= */
     .coordinators {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -99,15 +123,6 @@
       box-shadow: 0 25px 45px rgba(0,0,0,0.7);
     }
 
-    .coordinator-card img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 3px solid #00e5ff;
-    }
-
     .coordinator-card h3 {
       font-size: 20px;
       color: #ffca28;
@@ -120,13 +135,7 @@
       margin-bottom: 6px;
     }
 
-    .coordinator-card a {
-      color: #00e5ff;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    /* Footer */
+    /* ================= FOOTER ================= */
     footer {
       background: rgba(0,0,0,0.85);
       padding: 20px;
@@ -148,7 +157,7 @@
       transform: scale(1.2);
     }
 
-    /* Animations */
+    /* ================= ANIMATIONS ================= */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -159,57 +168,98 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 768px) {
-      .page-header h2 { font-size: 36px; }
-      .coordinators { padding: 20px; }
+    /* ================= MOBILE MENU ================= */
+    @media (max-width: 900px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        border-radius: 15px;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar">
   <div class="nav-logo">TECHSPARK 2025</div>
+
+  <div class="menu-btn" id="menuBtn">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
     <li><a href="events.html">Events</a></li>
     <li><a href="guidelines.html">Guidelines</a></li>
     <li><a href="rules.html">Rules</a></li>
     <li><a href="schedule.html">Schedule</a></li>
-    <li><a href="coordinators.html">Coordinators</a></li>
+    <li><a href="coordinators.html" class="active">Coordinators</a></li>
+  </ul>
 </nav>
 
-  <!-- Header -->
-  <div class="page-header">
-    <h2>Event Coordinators</h2>
-    <p>Meet the coordinators of SRK TECHSPARK 2025</p>
+<!-- HEADER -->
+<div class="page-header">
+  <h2>Event Coordinators</h2>
+  <p>Meet the coordinators of SRK TECHSPARK 2025</p>
+</div>
+
+<!-- COORDINATORS -->
+<div class="coordinators">
+
+  <div class="coordinator-card">
+    <h3>Ms. Ch. Jeevana Priya</h3>
+    <p>Faculty Coordinator</p>
+    <p>📞 +91 8790670429</p>
   </div>
 
-  <!-- Coordinators -->
-  <div class="coordinators">
-
-    <div class="coordinator-card">
-      <h3>Ms.Ch.Jeevana Priya</h3>
-      <p>Faculty Coordinator</p>
-      <p>📞 +91 8790670429</p>
-    </div>
-
-    <div class="coordinator-card">
-      <h3>S.Madhav Karthikeya</h3>
-      <p>Student Coordinator</p>
-      <p>📞 +91 7680950344</p>
-    </div>
-
+  <div class="coordinator-card">
+    <h3>S. Madhav Karthikeya</h3>
+    <p>Student Coordinator</p>
+    <p>📞 +91 7680950344</p>
   </div>
 
-   <!-- Footer -->
-  <footer>
-    <p>Follow SRK Institute of Technology</p>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/srk_college_official_updates?igsh=NG9razQzcGRrbHNs" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href=https://youtube.com/@srkinstituteoftechnology?si=QUk0DzMpBiW46Dic><i class="fab fa-youtube"></i></a>
-      <a href="https://www.linkedin.com/school/srk-institute-of-technology-enikepadu-vijayawada-521108-cc-x4-/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </footer>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Follow SRK Institute of Technology</p>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/srk_college_official_updates?igsh=NG9razQzcGRrbHNs" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@srkinstituteoftechnology?si=QUk0DzMpBiW46Dic" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/school/srk-institute-of-technology-enikepadu-vijayawada-521108-cc-x4-/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+</footer>
+
+<!-- MENU SCRIPT -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
 
 </body>
 </html>

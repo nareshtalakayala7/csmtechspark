@@ -12,17 +12,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(120deg, rgba(5,10,40,0.9), rgba(0,0,0,0.9)),
-                  url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1600&q=80');
+        url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -31,56 +27,28 @@
       align-items: center;
     }
 
-    /* ================= NAVBAR ================= */
+    /* NAVBAR */
     .navbar {
       width: 100%;
+      padding: 15px 40px;
+      background: rgba(0,0,0,0.7);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 40px;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
     .nav-logo {
       font-family: 'Orbitron', sans-serif;
       font-size: 22px;
-      font-weight: 700;
       color: #00e5ff;
-      letter-spacing: 2px;
     }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 20px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .nav-links a:hover {
-      background: #00e5ff;
-      color: #000;
-    }
-
-    /* ================= REGISTER SECTION ================= */
+    /* REGISTER CARD */
     .register-wrapper {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
       padding: 40px 20px;
     }
 
@@ -90,12 +58,11 @@
       border-radius: 18px;
       max-width: 420px;
       width: 100%;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
       text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
 
     .register-card h2 {
-      font-size: 32px;
       color: #00e5ff;
       margin-bottom: 8px;
     }
@@ -113,7 +80,6 @@
       margin-bottom: 14px;
       border-radius: 12px;
       border: none;
-      outline: none;
       font-size: 15px;
     }
 
@@ -124,15 +90,8 @@
       border: none;
       font-size: 16px;
       font-weight: 600;
-      cursor: pointer;
-      color: #000;
       background: linear-gradient(45deg, #00e5ff, #1de9b6);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .register-card button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      cursor: pointer;
     }
 
     #msg {
@@ -140,60 +99,27 @@
       font-size: 14px;
     }
 
-    /* ================= FOOTER ================= */
     footer {
       background: rgba(0,0,0,0.75);
-      padding: 20px 0;
+      padding: 20px;
       text-align: center;
       width: 100%;
     }
 
     footer p {
-      font-size: 14px;
       color: #ccc;
-      margin-bottom: 10px;
-    }
-
-    .social-icons a {
-      color: #fff;
-      font-size: 22px;
-      margin: 0 12px;
-      transition: transform 0.3s, color 0.3s;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      color: #00e5ff;
-      transform: scale(1.2);
-    }
-
-    @media (max-width: 900px) {
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
-      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-logo">TECHSPARK 2025</div>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="guidelines.html">Guidelines</a></li>
-    <li><a href="rules.html">Rules</a></li>
-    <li><a href="schedule.html">Schedule</a></li>
-    <li><a href="coordinators.html">Coordinators</a></li>
 </nav>
 
-<!-- REGISTER FORM -->
 <div class="register-wrapper">
   <div class="register-card">
-
     <h2>Event Registration</h2>
     <p>Register now for SRK TECHSPARK 2025</p>
 
@@ -219,17 +145,11 @@
   </div>
 </div>
 
- <!-- Footer -->
-  <footer>
-    <p>Follow SRK Institute of Technology</p>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/srk_college_official_updates?igsh=NG9razQzcGRrbHNs" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href=https://youtube.com/@srkinstituteoftechnology?si=QUk0DzMpBiW46Dic><i class="fab fa-youtube"></i></a>
-      <a href="https://www.linkedin.com/school/srk-institute-of-technology-enikepadu-vijayawada-521108-cc-x4-/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </footer>
+<footer>
+  <p>© SRK TECHSPARK 2025</p>
+</footer>
 
-<!-- GOOGLE SHEETS SCRIPT -->
+<!-- FIXED SCRIPT -->
 <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbz1g18gtAloQrK8NppHgUAhBDUTaY-sz1wXwY4QbPJuh7m7ny_t-sDxnt6vR1yj8SAAyw/exec";
   const form = document.getElementById("registerForm");
@@ -237,7 +157,6 @@
 
   form.addEventListener("submit", e => {
     e.preventDefault();
-    msg.style.color = "#00e5ff";
     msg.innerHTML = "Submitting...";
 
     fetch(scriptURL, {
@@ -245,13 +164,13 @@
       body: new FormData(form)
     })
     .then(() => {
-      msg.style.color = "#00e5ff";
-      msg.innerHTML = "✅ Registered Successfully!";
-      form.reset();
+      setTimeout(() => {
+        window.location.assign("./thankyou.html");
+      }, 300);
     })
     .catch(() => {
+      msg.innerHTML = "❌ Submission failed";
       msg.style.color = "red";
-      msg.innerHTML = "❌ Server error";
     });
   });
 </script>
