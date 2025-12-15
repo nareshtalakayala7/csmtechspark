@@ -20,14 +20,19 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-logo">TECHSPARK 2025</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="events.html">Events</a>
-    <a href="guidelines.html">Guidelines</a>
-    <a href="rules.html">Rules</a>
-    <a href="schedule.html" class="active">Schedule</a>
-    <a href="coordinators.html">Coordinators</a>
+
+  <div class="menu-btn" id="menuBtn">
+    <i class="fas fa-bars"></i>
   </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="guidelines.html">Guidelines</a></li>
+    <li><a href="rules.html">Rules</a></li>
+    <li><a href="schedule.html" class="active">Schedule</a></li>
+    <li><a href="coordinators.html">Coordinators</a></li>
+  </ul>
 </nav>
 
 <!-- HEADER -->
@@ -36,9 +41,8 @@
   <p>Sync your time with the future</p>
 </header>
 
-<!-- TIMELINE TABLE -->
+<!-- TIMELINE -->
 <section class="timeline-wrapper">
-
   <div class="timeline-table">
 
     <div class="timeline-row head">
@@ -48,57 +52,57 @@
     </div>
 
     <div class="timeline-row">
-      <div class="event">
-        <span class="dot cyan"></span> Poster Presentation
-      </div>
-      <div class="time purple">Starts from 01:00 PM</div>
+      <div class="event"><span class="dot cyan"></span>Poster Presentation</div>
+      <div class="time purple">01:00 PM</div>
       <div class="venue">FF Room A101 – Block A</div>
     </div>
 
     <div class="timeline-row">
-      <div class="event">
-        <span class="dot violet"></span> Technical Quiz
-      </div>
-      <div class="time purple">Starts from 01:15 PM</div>
+      <div class="event"><span class="dot violet"></span>Technical Quiz</div>
+      <div class="time purple">01:15 PM</div>
       <div class="venue">SF MCA Lab A215 – Block A</div>
     </div>
 
     <div class="timeline-row">
-      <div class="event">
-        <span class="dot pink"></span> Snap2Prompt
-      </div>
-      <div class="time purple">Starts from 02:30 PM</div>
+      <div class="event"><span class="dot pink"></span>Snap2Prompt</div>
+      <div class="time purple">02:30 PM</div>
       <div class="venue">SF MCA Lab A215 – Block A</div>
     </div>
 
     <div class="timeline-row">
-      <div class="event">
-        <span class="dot cyan"></span> Start-Up Pitch
-      </div>
-      <div class="time purple">Starts from 01:00 PM</div>
+      <div class="event"><span class="dot cyan"></span>Start-Up Pitch</div>
+      <div class="time purple">01:00 PM</div>
       <div class="venue">FF Android Lab A103 – Block A</div>
     </div>
 
     <div class="timeline-row">
-      <div class="event">
-        <span class="dot cyan"></span> Reverse Coding
-      </div>
-      <div class="time purple">Starts from 01:00 PM</div>
+      <div class="event"><span class="dot cyan"></span>Reverse Coding</div>
+      <div class="time purple">01:00 PM</div>
       <div class="venue">FF Android Lab A103 – Block A</div>
     </div>
 
   </div>
-
 </section>
 
- <!-- Footer -->
-  <footer>
-    <p>Follow SRK Institute of Technology</p>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/srk_college_official_updates?igsh=NG9razQzcGRrbHNs" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href=https://youtube.com/@srkinstituteoftechnology?si=QUk0DzMpBiW46Dic><i class="fab fa-youtube"></i></a>
-      <a href="https://www.linkedin.com/school/srk-institute-of-technology-enikepadu-vijayawada-521108-cc-x4-/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <p>Follow SRK Institute of Technology</p>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/srk_college_official_updates" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@srkinstituteoftechnology" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/school/srk-institute-of-technology-enikepadu-vijayawada-521108-cc-x4-/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+</footer>
+
+<!-- JS FOR MOBILE MENU -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
+
 </body>
 </html>

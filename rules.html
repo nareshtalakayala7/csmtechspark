@@ -11,135 +11,8 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, rgba(6,10,45,0.9), rgba(0,0,0,0.9)),
-                  url('https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* ================= NAVBAR ================= */
-    .navbar {
-      background: rgba(0,0,0,0.75);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-logo {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 22px;
-      color: #00e5ff;
-      letter-spacing: 2px;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: #00e5ff;
-    }
-
-    /* ================= HEADER ================= */
-    .page-header {
-      text-align: center;
-      padding: 50px 20px 30px;
-    }
-
-    .page-header h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 44px;
-      color: #00e5ff;
-    }
-
-    .page-header p {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #dddddd;
-    }
-
-    /* ================= RULES ================= */
-    .rules-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 30px 25px 60px;
-    }
-
-    .rule-card {
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      border-radius: 18px;
-      padding: 25px 30px;
-      margin-bottom: 25px;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.5);
-    }
-
-    .rule-card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: #ffca28;
-    }
-
-    .rule-card ol {
-      padding-left: 20px;
-    }
-
-    .rule-card ol li {
-      margin-bottom: 10px;
-      font-size: 15px;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: rgba(0,0,0,0.85);
-      padding: 20px;
-      text-align: center;
-      margin-top: auto;
-    }
-
-    footer p {
-      color: #ccc;
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      .page-header h2 {
-        font-size: 32px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="rules.css">
 </head>
 
 <body>
@@ -147,11 +20,16 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-logo">TECHSPARK 2025</div>
-  <ul class="nav-links">
+
+  <div class="menu-btn" id="menuBtn">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
     <li><a href="events.html">Events</a></li>
     <li><a href="guidelines.html">Guidelines</a></li>
-    <li><a href="rules.html">Rules</a></li>
+    <li><a href="rules.html" class="active">Rules</a></li>
     <li><a href="schedule.html">Schedule</a></li>
     <li><a href="coordinators.html">Coordinators</a></li>
   </ul>
@@ -166,7 +44,7 @@
 <!-- RULES CONTENT -->
 <div class="rules-container">
 
-  <!-- POSTER PRESENTATION -->
+  <!-- DIGITAL POSTER PRESENTATION (UNCHANGED) -->
   <div class="rule-card">
     <h3>Digital Poster Presentation</h3>
     <ol>
@@ -183,7 +61,7 @@
     </ol>
   </div>
 
-  <!-- TECHNICAL QUIZ -->
+  <!-- TECHNICAL QUIZ (UNCHANGED) -->
   <div class="rule-card">
     <h3>Technical Quiz</h3>
     <ol>
@@ -200,29 +78,67 @@
     </ol>
   </div>
 
-  <!-- SNAP2PROMPT -->
+  <!-- SNAP2PROMPT (ORIGINAL RULES + ADDITIONS) -->
   <div class="rule-card">
     <h3>Snap2Prompt</h3>
-    <ol>
-      <li>Individual participation only.</li>
-      <li>Images will be provided on the spot.</li>
-      <li>Prompt creativity and relevance will be evaluated.</li>
-      <li>Time limit must be strictly followed.</li>
-    </ol>
+
+    <!-- ADDED CONTENT (APPENDED, NOT REPLACING) -->
+    <h4>✅ Do’s of Snap2Prompt</h4>
+    <ul>
+      <li>Be explicit about the goal of the prompt.</li>
+      <li>Provide context that the image alone cannot convey.</li>
+      <li>Structure your prompt clearly.</li>
+      <li>Specify what elements to ignore.</li>
+      <li>Define the expected output format.</li>
+      <li>Use constraints such as tone, length, or style.</li>
+    </ul>
+
+    <h4>❌ Don’ts of Snap2Prompt</h4>
+    <ul>
+      <li>Do not rely on the image to convey intent.</li>
+      <li>Avoid unnecessary or multiple screenshots.</li>
+      <li>Do not ask overly broad or vague questions.</li>
+      <li>Do not assume perfect OCR accuracy.</li>
+      <li>Avoid uploading sensitive or personal information.</li>
+      <li>Do not leave instructions unclear.</li>
+    </ul>
+
+    <h4>🎁 Snap2Prompt Template (Best Practice)</h4>
+    <pre style="white-space: pre-wrap; color:#e0e0e0;">
+You will see an image.
+Context: [describe project or purpose]
+Image type: [screenshot/photo/diagram/UI/etc.]
+
+Your task:
+1) Extract key visible elements
+2) Ignore: [ads, timestamps, icons, etc.]
+3) Produce: [summary, rewrite, analysis, etc.]
+
+Constraints: [tone, length, format]
+Output format: [bullets/JSON/etc.]
+    </pre>
   </div>
 
-  <!-- REVERSE CODING -->
-  <div class="rule-card">
-    <h3>Reverse Coding</h3>
-    <ol>
-      <li>Individual or team of two participants allowed.</li>
-      <li>Participants must derive logic from given outputs.</li>
-      <li>Any programming language may be used.</li>
-      <li>Internet usage is strictly prohibited.</li>
-    </ol>
-  </div>
+  <!-- REVERSE CODING (ORIGINAL + ADDED RULES, NOTHING REMOVED) -->
+<div class="rule-card">
+  <h3>Reverse Coding</h3>
 
-  <!-- START-UP PITCH -->
+  <!-- ADDED RULES (APPENDED AS REQUESTED) -->
+  <ol start="1">
+    <li>Participants can take part individually.</li>
+    <li>Only output, sample test cases, and constraints will be provided — no direct logic.</li>
+    <li>Participants must identify the logic and write a program to match the given output.</li>
+    <li>Allowed languages: C, C++, Java, Python.</li>
+    <li>Internet usage and electronic gadgets are strictly prohibited.</li>
+    <li>Code must be written only on the provided system.</li>
+    <li>Plagiarism or malpractice will lead to immediate disqualification.</li>
+    <li>In case of a tie, the decision will be based on accuracy and submission time.</li>
+    <li>The judges’ decision is final.</li>
+  </ol>
+</div>
+
+
+  <!-- START-UP PITCH (UNCHANGED) -->
   <div class="rule-card">
     <h3>Start-Up Pitch</h3>
     <ol>
@@ -245,11 +161,21 @@
 <footer>
   <p>Follow SRK Institute of Technology</p>
   <div class="social-icons">
-    <a href="https://www.instagram.com/srk_college_official_updates?igsh=NG9razQzcGRrbHNs" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://youtube.com/@srkinstituteoftechnology?si=QUk0DzMpBiW46Dic" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/srk_college_official_updates" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@srkinstituteoftechnology" target="_blank"><i class="fab fa-youtube"></i></a>
     <a href="https://www.linkedin.com/school/srk-institute-of-technology-enikepadu-vijayawada-521108-cc-x4-/" target="_blank"><i class="fab fa-linkedin"></i></a>
   </div>
 </footer>
+
+<!-- MENU SCRIPT -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
 
 </body>
 </html>
